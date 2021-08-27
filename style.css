@@ -92,8 +92,10 @@ div#score {
     top: 10px;
     left: 20px;
     text-align: left;
-
 }
+
+
+
 
 div#reset {
     position: absolute;
@@ -116,4 +118,61 @@ div#reset:hover {
 
 div#reset:active {
     transform: scale(0.9);
+}
+
+.mole-img {
+    transition: .2s;
+}
+
+
+@keyframes downAnimation {
+    0% {top: 0%;}
+    100% {top: 100%;}
+}
+
+@keyframes biggerAnimation {
+    0% {transform: scale(1);}
+    50% {transform: scale(2);}
+    100% {transform: scale(1);}
+}
+
+
+
+body {
+    overflow: hidden;
+}
+
+.down {
+    animation-name: downAnimation;
+    animation-duration: .5s;
+    animation-direction: normal;
+}
+
+.bigger {
+    animation-name: biggerAnimation;
+    animation-duration: .5s;
+}
+
+.start {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0000008c;
+    z-index: 200;
+    /* margin-top: 1000px; */
+    
+}
+
+.start p {
+    background-color: lawngreen;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.start p:hover {
+    filter: brightness(50%);
 }

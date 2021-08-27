@@ -9,13 +9,21 @@ let chooseMole = (choosen) => {
     }
     return molesIndex
 }
-    let kotaks = document.getElementsByClassName("kotak")   
-    // moles appear-disappear interval
-    // let availableIdx = [1,1,1,1,1,1]
-    let idxs = chooseMole([])
-    let moleInterval = setInterval(() => {
-        
-        
+
+
+
+let kotaks = document.getElementsByClassName("kotak")   
+// moles appear-disappear interval
+// let availableIdx = [1,1,1,1,1,1]
+let idxs = chooseMole([])
+let moleInterval;
+
+// start
+const start = document.querySelector(".start p")
+start.addEventListener("click",() => {
+    start.parentElement.classList.add("down")
+    setTimeout(() => start.parentElement.style.display = "none", 500)
+    moleInterval = setInterval(() => {
         // console.log(idxs);
         for (let i = 0; i < kotaks.length; i++){
             kotaks[i].style.backgroundImage = "none"
@@ -27,7 +35,7 @@ let chooseMole = (choosen) => {
         })
         idxs = chooseMole(idxs)
     },1000)
-
+})
     // if the moles got clicked
     document.querySelectorAll(".kotak").forEach((e,idx) => {
         e.addEventListener("click" ,() => {
@@ -42,4 +50,4 @@ let chooseMole = (choosen) => {
     })
     
     // reset
-    document.getElementById("reset").addEventListener("click",() => location.reload())
+    document.getElementById("reset").addEventListener("click",() => location.reload()   )
